@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,50 +19,38 @@
     <script>tinymce.init({ selector:'textarea' });</script>
     <title></title>
 
+  <style type="text/css">
+    #verde1{
+      background: #58FA58;
+    }
+
+  </style>
+
   </head>
   <body>
-
     <?php
-    // Get a connection for the database
-    require_once('mysqli_connect.php');
+    if (isset($_SESSION["aviso"])) {
 
-    // Create a query for the database
-    $query = "SELECT texto FROM tinymce";
-
-    // Get a response from the database by sending the connection
-    // and the query
-    $response = @mysqli_query($dbc, $query);
-
-    // If the query executed properly proceed
-
-
-    // mysqli_fetch_array will return a row of data from the query
-    // until no further data is available
-
-
-
-    ?>
-
-
+    }else {
+      $_SESSION["aviso"] = "";
+    }
+     ?>
     <h3>Tiny MCE</h3>
-    <a href="database/index.html" class="btn btn-danger" role="button">Return</a>
-  <!--  <hr>
-    <div class="btn-group" role="group" aria-label="...">
-      <button type="button" class="btn btn-primary">Left</button>
-      <button type="button" class="btn btn-danger">Middle</button>
-      <button type="button" class="btn btn-success">Right</button>
-    </div>-->
-
-
-
-  <!--  <div class="container-fluid">-->
-      <hr>
+    <a href="../index.html" class="btn btn-danger" role="button">Return</a>
+    <hr>
+    <?php
+      if ($_SESSION["aviso"] != "") {
+        echo "<div id='verde1'>".$_SESSION["aviso"]."</div><hr>";
+        $_SESSION["aviso"]="";
+      }
+    ?>
+    <form class="" action="tinymce_process.php" method="post">
       <div class="row">
         <div class="col-md-8 text-center">
           <textarea name="text" rows="8" cols="40"></textarea>
         </div>
       </div>
-
-
+      <button type="submit" class="btn btn-primary" value="Send" name="submit">Submit</button>
+    </form>
   </body>
 </html>
