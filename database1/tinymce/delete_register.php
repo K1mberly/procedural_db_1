@@ -26,16 +26,22 @@ for ($i=0; $i < sizeof($deleteArray); $i++) {
 
 	    $k++;
 	    if (sizeof($deleteArray)>0) {
+        echo "\n";
         echo "paso: ";
         echo $sql;
         echo "\n";
+        echo $deleteArray[$i];
+
 
       //	$session->message("MESSAGE_SUCCESS_4"." [". $k." registers]");
 	    }else{
 	    	//$session->message("MESSAGE_SUCCESS_3"." "."< {$user->first_name} {$user->last_name} >");
+        echo "\n";
         echo "No paso: ";
         echo $sql;
         echo "\n";
+        echo $deleteArray[$i];
+
 
 	    }
 	}else{
@@ -43,5 +49,5 @@ for ($i=0; $i < sizeof($deleteArray); $i++) {
 	}
 
 }
-header('Location: tinymce_list.php');
+//header('Location: tinymce_list.php');
 ?>
