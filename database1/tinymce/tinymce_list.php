@@ -64,8 +64,8 @@
       $('#tabla1').DataTable();
 
       $('#alert').click(function(){
-        window.location.href="delete_register.php";/**/
-        //  alert("Esto es una alerta");
+        //window.location.href="delete_register.php";/**/
+        alert("Esto es una alerta");
       } );
 
       $('#delete').click(function(){
@@ -108,7 +108,7 @@
                 /*modalAction="../../../modules/admin/views/user_delete.php";*/
                 //modalAction=data['deleteFromTable'];
                 //$('#userAuthenticationModal').modal('show');
-                window.location.href="delete_register.php";/**/
+                window.location.href="delete_register.php"+deleteString;/**/
               }else{
                 // Al menos seleccionar un registro a borrar
                 //document.getElementById("myMessage1").innerHTML = MESSAGE_WARNING_3;
