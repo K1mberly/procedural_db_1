@@ -6,6 +6,7 @@ if(empty($_GET['id'])){ /*si la variable id esta vacia no hace nada y regresa*/
     header('Location: tinymce_list.php');
 }
 
+require_once('../mysqli_connect.php');
 $deleteArray=explode(",",$_GET['id']);
 
 $k=0;
@@ -13,16 +14,33 @@ for ($i=0; $i < sizeof($deleteArray); $i++) {
 
 	//$user=User::find_by_id($deleteArray[$i]);
 
-	if ($user) {
+	if (sizeof($deleteArray) >0) {
 	    //$user->delete_user_and_photo();
+      $sql= "DELETE FROM "."`tinymce`"." ";
+      $sql.= "WHERE `id`=". $deleteArray[$i];
+      $sql.= " LIMIT 1";
+
+      $dbc->query($sql);
+      $dbc->close();
+
+
+      //$this->code=$sql;
+      //return (mysqli_affected_rows($database->connection) ==1) ? true: false;
+
+
 	    $k++;
-	    if (sizeof($deleteArray)>1) {
-	    //	$session->message("MESSAGE_SUCCESS_4"." [". $k." registers]");
+	    if (sizeof($deleteArray)>0) {
+        echo "paso";
+      //	$session->message("MESSAGE_SUCCESS_4"." [". $k." registers]");
 	    }else{
 	    	//$session->message("MESSAGE_SUCCESS_3"." "."< {$user->first_name} {$user->last_name} >");
+        echo "No paso";
+        echo "br";
+        echo $sql;
 	    }
 	}else{
+    echo "ptm";
 	}
 }
-header('Location: tinymce_list.php'); 
+//header('Location: tinymce_list.php');
 ?>
