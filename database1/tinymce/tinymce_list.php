@@ -30,6 +30,7 @@
       <tbody>
         <?php
           if($response){
+              $contador=1;
               while($row = mysqli_fetch_array($response)){
         ?>
         <tr>
@@ -37,7 +38,11 @@
               <div class="form-group">
                       <input type="checkbox" name="myCheckbox" value="<?php echo $row['id'];?>">
                       <!--&nbsp; -->
-                      <a href=""><?php echo $row['id'];?></a>
+                      <a href="">
+                          <?php echo $contador;
+                          $contador++;
+                          ?>
+                      </a>
               </div>
 
             </td>
@@ -100,25 +105,12 @@
                     }
                 }
             }
-
-              if(checkBoxesValues.length>0){ /*si la longitud de cbv es mayor a cero quiere decir q se han hecho check y ejecuta lo de abajo*/
-
-                //alert("delete");
-                //alert(data['deleteFromTable']);
-                /*modalAction="../../../modules/admin/views/user_delete.php";*/
-                //modalAction=data['deleteFromTable'];
-                //$('#userAuthenticationModal').modal('show');
-                window.location.href="delete_register.php"+deleteString;/**/
+              /*si la longitud de cbv es mayor a cero quiere decir q se han hecho check y ejecuta lo de abajo*/
+              if(checkBoxesValues.length>0){
+                window.location.href="delete_register.php"+deleteString;
               }else{
-                // Al menos seleccionar un registro a borrar
-                //document.getElementById("myMessage1").innerHTML = MESSAGE_WARNING_3;
-                //document.getElementById("myMessage1").className ="row bg-danger";
                 alert("Al menos seleccionar un registro a borrar");
               }
-              //Quitar el FOCUS del boton
-              //$("#delete").blur();
-        //  });
-
       } );
 
       $('#update').click(function(){
