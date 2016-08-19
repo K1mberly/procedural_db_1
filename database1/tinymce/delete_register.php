@@ -1,5 +1,5 @@
 <?php
-require_once('../mysqli_connect.php');
+require_once('../mysqli_connect_1.php');
 
 
 $message = "";
@@ -7,7 +7,6 @@ $message = "";
 if(empty($_GET['id'])){
     header('Location: tinymce_list.php');
 }
-
 
 $deleteArray=explode(",",$_GET['id']);
 
@@ -19,10 +18,11 @@ for ($i=0; $i < sizeof($deleteArray); $i++) {
         $sql.= "WHERE `id`=". $deleteArray[$i];
         $sql.= " LIMIT 1";
         /*sobre la conexion abierta dbc se hace la consulta query tomando en cuenta el codigo $sql*/
-        $dbc->query($sql);
+        if($dbc->query($sql)){
+          printf("%d fila modificada.\n", $dbc->affected_rows);
+        }
 
   	    $k++;
-
           echo "<br>";
           echo "paso: "."<br>";
           echo $sql."<br>";
@@ -30,7 +30,6 @@ for ($i=0; $i < sizeof($deleteArray); $i++) {
   	  }else{
       echo "No se seleciono ningun checkbox: sizeof($deleteArray) <=0";
   	  }
-
 }
 header('Location: tinymce_list.php');
 ?>
