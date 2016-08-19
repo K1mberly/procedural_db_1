@@ -8,7 +8,7 @@
         require_once('../mysqli_connect_1.php');
 
         $sql = "SELECT id, text_area FROM tinymce";
-        $sql.=" WHERE id= ".$_GET['id'];
+        $sql.=" WHERE id= ".$_GET['id']." LIMIT 1";
         //echo $sql;
         if($response= $dbc->query($sql)){
           //printf("%d fila modificada.\n", $dbc->affected_rows);
