@@ -15,9 +15,9 @@
     <div class="container">
     <h2>List of Comments</h2>
     <a href="../index.html" class="btn btn-warning" role="button">Return Index</a>
-    <a href="" class="btn btn-info" role="button" id="delete">Delete</a>
-    <a href="" class="btn btn-danger" role="button" id="alert">Alert</a>
-    <a href="" class="btn btn-default" role="button" id="update">Update</a>
+    <a href="javascript:void(0)" class="btn btn-info" role="button" id="delete">Delete</a>
+    <a href="javascript:void(0)" class="btn btn-danger" role="button" id="alert">Alert</a>
+    <a href="javascript:void(0)" class="btn btn-default" role="button" id="update">Update</a>
     <p>The .table-striped class adds zebra-stripes to a table:</p>
     <form id="myTableForm" name="myForm" method="post" action="" onSubmit="" enctype = text/plain>
     <table id="tabla1" class="table table-striped table-bordered">
