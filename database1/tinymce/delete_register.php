@@ -26,16 +26,20 @@ for ($i=0; $i < sizeof($deleteArray); $i++) {
 
 	    $k++;
 	    if (sizeof($deleteArray)>0) {
-        echo "paso";
+        echo "paso: ";
+        echo $sql;
+        echo "\n";
+
       //	$session->message("MESSAGE_SUCCESS_4"." [". $k." registers]");
 	    }else{
 	    	//$session->message("MESSAGE_SUCCESS_3"." "."< {$user->first_name} {$user->last_name} >");
-        echo "No paso";
-        echo " ";
+        echo "No paso: ";
         echo $sql;
+        echo "\n";
+
 	    }
 	}else{
-    echo "ptm";
+    echo "sizeof($deleteArray) <=0";
 	}
 
 }
