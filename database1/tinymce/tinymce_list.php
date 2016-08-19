@@ -39,7 +39,7 @@
               <div class="form-group">
                       <input type="checkbox" name="myCheckbox" value="<?php echo $row['id'];?>">
                       <!--&nbsp; -->
-                      <a href="">
+                      <a href="view_register.php?id=<?php echo $row['id'];?>">
                           <?php echo $contador;
                           $contador++;
                           ?>
@@ -63,8 +63,9 @@
       </table>
       </form>
       </div>
-      <hr>
+
   <?php  require_once("layouts/footer.html");?>
+
   <script type="text/javascript">
     $(document).ready(function() {
       $('#tabla1').DataTable();
