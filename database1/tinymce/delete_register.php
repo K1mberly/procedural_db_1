@@ -24,5 +24,5 @@ for ($i=0; $i < sizeof($deleteArray); $i++) {
 	}else{
 	}
 }
-header('Location: tinymce_list.php');
+header('Location: tinymce_list.php'); 
 ?>
