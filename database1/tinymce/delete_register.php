@@ -22,14 +22,14 @@ for ($i=0; $i < sizeof($deleteArray); $i++) {
           printf("%d fila modificada.\n", $dbc->affected_rows);
         }
 
-  	    $k++;
-          echo "<br>";
-          echo "paso: "."<br>";
-          echo $sql."<br>";
-          echo $deleteArray[$i]."<br>";
-  	  }else{
+      	$k++;
+        echo "<br>";
+        echo "paso: "."<br>";
+        echo $sql."<br>";
+        echo $deleteArray[$i]."<br>";
+  	}else{
       echo "No se seleciono ningun checkbox: sizeof($deleteArray) <=0";
-  	  }
+  	}
 }
 header('Location: tinymce_list.php');
 ?>

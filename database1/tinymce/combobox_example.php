@@ -13,7 +13,8 @@
         $sql = "SELECT student_id, first_name, last_name FROM students";
         $sql.="";
         //echo $sql;
-        if($response= $dbc->query($sql)){
+        $response= $dbc->query($sql);
+        if($response){
           //printf("%d fila modificada.\n", $dbc->affected_rows);
           $register= mysqli_fetch_array($response);
 
@@ -43,6 +44,7 @@
                     <option value="COOPESA">COOPESA</option>
                     <option value="MEXICANA">MEXICANA</option>
                     <option value="TAM LINHAS AEREAS S.A">TAM LINHAS AEREAS S.A</option>
+                    <option value="AVIANCA">AVIANCA</option>
                 </select>
             </div>
           </div>
