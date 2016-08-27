@@ -23,7 +23,7 @@ session_start();
         $_SESSION["aviso"]="";
       }
     ?>
-    <form class="" action="tinymce_process.php" method="post">
+    <form class="" action="register_add_process.php" method="post">
       <div class="row">
         <div class="col-md-8 text-center">
           <textarea name="text" rows="8" cols="40"></textarea>

@@ -5,7 +5,7 @@ require_once('../mysqli_connect_1.php');
 $message = "";
 /*si la variable id esta vacia no hace nada y regresa*/
 if(empty($_GET['id'])){
-    header('Location: tinymce_list.php');
+    header('Location: register_list.php');
 }
 
 $deleteArray=explode(",",$_GET['id']);
@@ -31,5 +31,5 @@ for ($i=0; $i < sizeof($deleteArray); $i++) {
       echo "No se seleciono ningun checkbox: sizeof($deleteArray) <=0";
   	}
 }
-header('Location: tinymce_list.php');
+header('Location: register_list.php');
 ?>

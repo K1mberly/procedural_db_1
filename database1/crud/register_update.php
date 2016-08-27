@@ -15,7 +15,7 @@ session_start();
     }
 
     if(empty($_GET['id'])){
-        header('Location: tinymce_list.php');
+        header('Location: register_list.php');
     }else {
         /* Consigo la informacion del registroo a editar desde la base de datos
         para luego insertarla en el TEXTAREA, y que el usuario pueda ver lo que
@@ -39,7 +39,7 @@ session_start();
     ?>
     <div class="container">
       <h3>Update: Tiny MCE</h3>
-      <a href="tinymce_list.php" class="btn btn-danger" role="button">Return</a>
+      <a href="register_list.php" class="btn btn-danger" role="button">Return</a>
       <hr>
     </div>
 
@@ -50,7 +50,7 @@ session_start();
       }
     ?>
     <div class="container">
-      <form class="" action="update_register_process.php" method="post">
+      <form class="" action="register_update_process.php" method="post">
           <div class="row">
             <div class="col-md-8 text-center">
               <textarea name="text" rows="8" cols="40"><?php echo $register['text_area']; ?></textarea>

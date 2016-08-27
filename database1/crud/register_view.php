@@ -8,7 +8,7 @@
 
     <?php
         if(empty($_GET['id'])){
-            header('Location: tinymce_list.php');
+            header('Location: register_list.php');
         }else {
             /* Consigo la informacion del registroo a editar desde la base de datos
             para luego insertarla en el TEXTAREA, y que el usuario pueda ver lo que
@@ -30,7 +30,7 @@
 
     <div class="container">
     <h2>Details of the Selected Comment</h2>
-    <a href="tinymce_list.php" class="btn btn-warning" role="button">Return</a>
+    <a href="register_list.php" class="btn btn-warning" role="button">Return</a>
     </div>
     <hr>
 

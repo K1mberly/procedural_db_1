@@ -14,5 +14,5 @@ if(isset($_POST["submit"])){
         $dbc->close();
     }
 }
-header('Location: tinymce.php');
+header('Location: register_add.php');
 ?>

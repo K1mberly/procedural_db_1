@@ -4,7 +4,7 @@ require_once('../mysqli_connect_1.php');
 $message = "";
 /*si la variable id esta vacia no hace nada y regresa*/
 if(empty($_POST['id']) && empty($_POST['text'])){
-    header('Location: tinymce_list.php');
+    header('Location: register_list.php');
 }
 
 $updateRegister=$_POST['id'];
@@ -24,5 +24,5 @@ $updateRegister=$_POST['id'];
         echo $sql."<br>";
         echo $updateRegister."<br>";
 
-header('Location: tinymce_list.php');
+header('Location: register_list.php');
 ?>
