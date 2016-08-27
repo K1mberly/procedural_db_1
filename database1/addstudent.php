@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <!-- boostrap3-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <?php   require_once("crud/layouts/headerIndex.html");?>
     <title>Add Student</title>
   </head>
   <body>
 <h3>Add Student</h3>
-<a href="index.html" class="btn btn-danger" role="button">Cancel</a>
+<a href="index.php" class="btn btn-danger" role="button">Cancel</a>
     <hr>
 <div class="container">
 

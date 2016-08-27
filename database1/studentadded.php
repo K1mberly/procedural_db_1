@@ -8,7 +8,7 @@
 </head>
 <body>
   <h3>Add Student</h3>
-        <a href="index.html" class="btn btn-warning" role="button">Return Index</a>
+        <a href="index.php" class="btn btn-warning" role="button">Return Index</a>
       <hr>
 <?php
 

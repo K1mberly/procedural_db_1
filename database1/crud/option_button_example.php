@@ -7,13 +7,16 @@
     <h1>Option Button</h1>
     <p id="demo"></p>
     <p id="demo1"></p>
-    <form>
-      <input type="radio" name="ejemplo1" value="option1">Option 1<br>
-      <input type="radio" name="ejemplo1" value="option2" checked>Option 2<br>
-      <a href="javascript:void(0)" class="btn btn-danger" role="button" id="alert">Alert</a>
+    <form class="" action="option_button_example_receive.php" method="post">
+        <input type="radio" name="ejemplo1" value="option1">Option 1<br>
+        <input type="radio" name="ejemplo1" value="option2" checked>Option 2<br>
+        <a href="javascript:void(0)" class="btn btn-danger" role="button" id="alert">Alert</a>
+        <a href="javascript:void(0)" class="btn btn-info" role="button" id="verifica">Verifica Opcion</a>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" value="Send" name="submit">Submit</button>
+        </div>
     </form>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
       $(document).ready(function() {
         $("#alert").click(function(){
@@ -22,6 +25,13 @@
         console.log("documento cargado");
         document.getElementById("demo").innerHTML = 5 + 6;
         document.getElementById("demo1").innerHTML ="Este es un aviso";
+        $("#verifica").click(function(){
+          if ($('input:radio[name=ejemplo1]:checked').val()=="option1") {
+            alert("opcion 1 seleccionada");
+          }else {
+            alert("opcion 2 seleccionada");
+          }
+        });
       });
     </script>
 
