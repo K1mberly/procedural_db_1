@@ -14,20 +14,19 @@
         $sql.="";
         //echo $sql;
         $response= $dbc->query($sql);
-        if($response){
-          //printf("%d fila modificada.\n", $dbc->affected_rows);
-          $register= mysqli_fetch_array($response);
-
-        }else{
-          echo "No response from the database";
-        }
+        // if($response){
+        //   $register= mysqli_fetch_array($response);
+        //
+        // }else{
+        //   echo "No response from the database";
+        // }
 
     ?>
 
     <br><br>
     <div class="container">
     <h2>Select a Register from the COMBOBOX</h2>
-    <a href="../index.html" class="btn btn-warning" role="button">Return Index</a>
+    <a href="../index.php" class="btn btn-warning" role="button">Return Index</a>
     </div>
     <hr>
     <div class="container">

@@ -14,7 +14,7 @@
 
     <div class="container">
     <h2>List of Comments</h2>
-    <a href="../index.html" class="btn btn-warning" role="button">Return Index</a>
+    <a href="../index.php" class="btn btn-warning" role="button">Return Index</a>
     <a href="javascript:void(0)" class="btn btn-info" role="button" id="delete">Delete</a>
     <a href="javascript:void(0)" class="btn btn-danger" role="button" id="alert">Alert</a>
     <a href="javascript:void(0)" class="btn btn-default" role="button" id="update">Update</a>

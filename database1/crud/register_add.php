@@ -15,7 +15,7 @@ session_start();
     }
      ?>
     <h3>Tiny MCE</h3>
-    <a href="../index.html" class="btn btn-danger" role="button">Return</a>
+    <a href="../index.php" class="btn btn-danger" role="button">Return</a>
     <hr>
     <?php
       if ($_SESSION["aviso"] != "") {
