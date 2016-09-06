@@ -1,0 +1,23 @@
+Instalar un FIREWALL
+    sudo apt-get install ufw
+
+    *Para denagar todo tipo de conexion entrante ( CUIDADO! antes de esto se debe exceptuar el puerto con la conexion que tenemos en este momento,
+    puerto 22 conexion ssh mediante putty): sudo ufw default deny incoming
+
+    Mientras no se desarranque al firewall, entonces todo esta bien.
+
+    *Para dar acceso a todas las conexiones salientes:
+    sudo ufw default allow outgoing
+
+    Agregar reglas de excepcion:
+
+    1) Permitir conexiones SSH:
+        sudo ufw allow ssh
+    2) Permitir conexiones del tipo ftp, por ssh, al puerto 80 y al puerto 443:
+        sudo ufw allow www
+
+        Conexiones seguras:
+        sudo ufw allow 443/tcp
+    3) Habilitar el firewall: sudo ufw enable
+    4) Verificar status:0 sudo ufw status
+        

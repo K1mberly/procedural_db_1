@@ -1,0 +1,89 @@
+apt-get update
+apt-get install mc
+
+/*Firewall*/
+apt-get install ufw
+sudo ufw allow ssh
+sudo ufw allow www
+sudo ufw allow 443/tcp
+ufw enable
+ufw default allow outgoing
+ufw status
+
+/*NGINX*/
+apt-get install nginx
+ufw allow 'Nginx HTTP'
+
+ /*MySQL*/
+ sudo apt-get install mysql-server
+ sudo mysql_install_db
+ sudo mysql_secure_installation
+
+/*PHP for Processing*/
+sudo apt-get install php5-fpm php5-mysql
+sudo nano /etc/php5/fpm/php.ini
+ -> cgi.fix_pathinfo=0
+sudo service php5-fpm restart
+sudo nano /etc/nginx/sites-available/default
+
+    server {
+      listen 80 default_server;
+      listen [::]:80 default_server ipv6only=on;
+
+      root /usr/share/nginx/html;
+      index index.php index.html index.htm;
+
+      server_name server_domain_name_or_IP;
+
+      location / {
+          try_files $uri $uri/ =404;
+      }
+
+      error_page 404 /404.html;
+      error_page 500 502 503 504 /50x.html;
+      location = /50x.html {
+          root /usr/share/nginx/html;
+      }
+
+      location ~ \.php$ {
+          try_files $uri =404;
+          fastcgi_split_path_info ^(.+\.php)(/.+)$;
+          fastcgi_pass unix:/var/run/php5-fpm.sock;
+          fastcgi_index index.php;
+          fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+          include fastcgi_params;
+      }
+    }
+
+sudo service nginx restart
+
+/*Create a PHP File to Test Configuration*/
+sudo nano /usr/share/nginx/html/info.php
+      <?php
+      phpinfo();
+      ?>
+
+**Create the Password File Using Apache Utilities**
+      sudo apt-get install apache2-utils
+      sudo htpasswd -c /etc/nginx/.htpasswd invitado  **htpasswd -c para crear un archivo oculto llamado .htpasswd, con usuario llamado invitado(podria ser cualquier nombre), para el primer usuario -c solo para el primer**
+      cat /etc/nginx/.htpasswd  ***para mostrar el password codificado**
+
+      **Configure Nginx Password Authentication**
+      sudo nano /etc/nginx/sites-enabled/default
+      server {
+          listen 80 default_server;
+          listen [::]:80 default_server ipv6only=on;
+
+          root /usr/share/nginx/html;
+          index index.html index.htm;
+
+          server_name localhost;
+
+          location / {
+              try_files $uri $uri/ =404;
+              auth_basic "Restricted Content";
+              auth_basic_user_file /etc/nginx/.htpasswd;
+          }
+      }
+
+      sudo service nginx restart

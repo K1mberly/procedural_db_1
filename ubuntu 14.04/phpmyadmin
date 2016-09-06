@@ -1,0 +1,15 @@
+sudo apt-get update
+sudo apt-get install phpmyadmin
+  **no seleccionar ninguna de las opciones, click en TAB y OK**
+
+sudo ln -s /usr/share/phpmyadmin /usr/share/nginx/html
+    **se crea un hipervinculo de los archivos de los archivos q estan en la carpeta del lado izquierdo hacia la carpeta del lado derecho**
+
+sudo php5enmod mcrypt
+sudo service php5-fpm restart
+
+**Changing the Application's Access Location**
+cd /usr/share/nginx/html
+ls -l
+sudo mv phpmyadmin databases
+ls -l

@@ -12,5 +12,5 @@ if(isset($_POST["submit"])){
     $dbc->close();
 }
 //echo $sql;
-header('Location: vehiculo_add.php');
+header('Location: vehiculo_list.php');
 ?>

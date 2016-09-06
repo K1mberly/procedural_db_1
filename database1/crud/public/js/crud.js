@@ -80,7 +80,7 @@
           }
             /*si la longitud de cbv es mayor a cero quiere decir q se han hecho check y ejecuta lo de abajo*/
             if(checkBoxesValues.length>0){
-              alert("Record deleted successfully");
+              // alert("Record deleted successfully");
               window.location.href="vehiculo_delete.php"+deleteString;
               //alert("Record deleted successfully");
             }else{

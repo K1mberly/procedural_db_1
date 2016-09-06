@@ -1,0 +1,16 @@
+adduser pablodonayre
+passwd pablodonayre
+
+Eliminar usuario:
+deluser pablodonayre (Este comando NO elimina la carpeta dentro del HOME,
+habra que hacerlo manualmente)
+
+deluser -r pablodonayre (Este comando SI elimina la carpeta dentro del HOME)
+
+Proporcionar permisos administrativos:
+sudo adduser pablodonayre sudo
+
+addgroup www-data  **crear un grupo**
+Add a existing user to existing group:
+    usermod -a -G <grupo> <usuario>
+    usermod -a -G www-data kimberly

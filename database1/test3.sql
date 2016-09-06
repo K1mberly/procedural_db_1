@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-08-2016 a las 02:59:13
+-- Tiempo de generación: 06-09-2016 a las 00:56:52
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.23
 
@@ -19,6 +19,51 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `test3`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modelos`
+--
+
+CREATE TABLE `modelos` (
+  `id` int(11) NOT NULL,
+  `modelo` varchar(30) NOT NULL,
+  `tipo` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `modelos`
+--
+
+INSERT INTO `modelos` (`id`, `modelo`, `tipo`) VALUES
+(1, 'optima', 'auto'),
+(2, 'cerato sedan', 'auto'),
+(3, 'cerato koup', 'auto'),
+(4, 'soul', 'auto'),
+(5, 'carens', 'auto'),
+(6, 'grand carnival', 'auto'),
+(7, 'k2700', 'camion');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `status`
+--
+
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL,
+  `status` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `status`
+--
+
+INSERT INTO `status` (`id`, `status`) VALUES
+(1, 'sin seguro'),
+(2, 'seguro particular'),
+(3, 'soat');
 
 -- --------------------------------------------------------
 
@@ -79,26 +124,55 @@ CREATE TABLE `tinymce` (
 --
 
 INSERT INTO `tinymce` (`id`, `text_area`) VALUES
-(1, '<p>holiii</p>'),
-(2, '<p style="text-align: center;">mi&nbsp;<strong>nombre&nbsp;<em>es&nbsp;</em></strong><em>kimberly</em></p>'),
-(3, '<p>kimberly</p>'),
-(4, '<p>jazmin</p>'),
-(5, '<p>algooo</p>'),
-(6, '<p>ruiz garcia</p>'),
-(7, '<p>jazmin del carmen</p>'),
-(8, '<p>kimberly jazmin ruiz garcia</p>'),
-(9, '<p>jazmin ruiz</p>'),
-(10, '<p>kevin</p>'),
-(11, '<p>axel</p>'),
-(12, '<p>axel ruiz</p>'),
-(13, '<p>ruiz axel</p>'),
-(14, '<p>lunaa</p>'),
-(15, '<p>luna huele feo</p>'),
-(16, '<p>hola q hce</p>');
+(31, '<p>la nancy es una mega horrible</p>'),
+(32, '<p>jjblkvghcvhkbjn</p>\r\n<p>kbdfjlnskm</p>\r\n<p>sdkbajfdnwwd</p>'),
+(37, '<p>cftgbnjimkjuytgv</p>'),
+(38, '<p>sdrfcvghyuhbnjioikjnbgf</p>'),
+(45, '<p>dajbfjldncjksjdsfnc,msdcsdfv c</p>');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vehiculos`
+--
+
+CREATE TABLE `vehiculos` (
+  `id` int(11) NOT NULL,
+  `modelo` int(30) NOT NULL,
+  `color` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `duenio` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `placa` varchar(10) CHARACTER SET latin1 NOT NULL,
+  `status` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `vehiculos`
+--
+
+INSERT INTO `vehiculos` (`id`, `modelo`, `color`, `duenio`, `placa`, `status`) VALUES
+(1, 2, 'plomo', 'Kimberly', 'A1H631', 1),
+(2, 5, 'azul', 'Kevin Axel', 'A5E148', 2),
+(22, 4, 'jhbdjbjfs', 'ashvdbjas', 'asdhbajsxm', 3),
+(23, 3, 'dhsbjnmk', 'sbd bjaln', 'khdbj', 1),
+(24, 3, 'rosado', 'kim', 'vhikmn', 2),
+(25, 5, 'azulino', 'daniel', 'hdjlkd52', 3),
+(26, 3, 'gris', 'ruiz', 'jgsdsvbjls', 3);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `modelos`
+--
+ALTER TABLE `modelos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `students`
@@ -113,9 +187,25 @@ ALTER TABLE `tinymce`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `vehiculos`
+--
+ALTER TABLE `vehiculos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
+--
+-- AUTO_INCREMENT de la tabla `modelos`
+--
+ALTER TABLE `modelos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de la tabla `status`
+--
+ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `students`
 --
@@ -125,7 +215,12 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT de la tabla `tinymce`
 --
 ALTER TABLE `tinymce`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+--
+-- AUTO_INCREMENT de la tabla `vehiculos`
+--
+ALTER TABLE `vehiculos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

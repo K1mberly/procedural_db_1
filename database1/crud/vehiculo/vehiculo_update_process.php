@@ -1,22 +1,21 @@
 <?php
+session_start();
 require_once('../../mysqli_connect_1.php');
 
 $message = "";
-/*si la variable id esta vacia no hace nada y regresa*/
-if(empty($_POST['id']) && empty($_POST['text'])){
-    header('Location: vehiculo_list.php');
-}
 
 $updateVehicle=$_POST['id'];
-
+// UPDATE `vehiculos` SET `modelo`='5',`color`='azulino',`duenio`='daniel',`placa`='hdjlkd52',`status`='3' WHERE `id`='25'
         $sql= "UPDATE "."`vehiculos`"." SET ";
-        $sql.= "`text_area`="."'".$_POST['text']."'";
+        $sql.="`modelo`="."'".$_POST['automatico']."',`color`="."'".$_POST['color']."',`duenio`="."'".$_POST['duenio']."',`placa`="."'".$_POST['placa']."',`status`="."'".$_POST['tipo']."'";
         $sql.= " WHERE id= ".$updateVehicle;
 
         /*sobre la conexion abierta dbc se hace la consulta query tomando en cuenta el codigo $sql*/
-        if($dbc->query($sql)){
-          printf("%d fila modificada.\n", $dbc->affected_rows);
-        }
+        if ($dbc->query($sql)) {
+            echo $_SESSION["aviso"]="Record updated successfully";
+        }else {
+            echo $_SESSION["aviso"]="Error. No data was registered";
+         }
         $dbc->close();
 
         echo "<br>";
@@ -24,5 +23,5 @@ $updateVehicle=$_POST['id'];
         echo $sql."<br>";
         echo $updateVehicle."<br>";
 
-//header('Location: vehiculo_list.php');
+header('Location: vehiculo_list.php');
 ?>

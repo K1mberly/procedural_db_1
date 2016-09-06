@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,6 +24,12 @@
 
     <!-- <p>The .table-striped class adds zebra-stripes to a table:</p> -->
     <hr>
+    <?php
+      if ($_SESSION["aviso"] != "") {
+        echo "<div id='verde1'>".$_SESSION["aviso"]."</div><hr>";
+        $_SESSION["aviso"]="";
+      }
+    ?>
     <form id="myTableForm" name="myForm" method="post" action="" onSubmit="" enctype = text/plain>
       <table id="tabla1" class="table table-striped table-bordered">
         <thead>

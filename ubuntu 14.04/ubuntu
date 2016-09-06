@@ -1,0 +1,13 @@
+Cambiar permisos de carpeta www:
+   sudo chmod 775 -R /var/www/ **chmod va a cambiar los permisos de la carpeta
+   www y los nuevos permisos son 775 -R le cambia los permisos a todo lo que
+   esta adentro ( recursivo, -R )**
+
+Modificar el dueño de los archivos:
+   sudo chown -R pablodonayre:www-data /var/www
+
+Verificar el espacio de disco:
+    df -h  **/dev/vda1    **
+    
+Verificar si dispone de version de 32 o 64 bits:
+    uname -a

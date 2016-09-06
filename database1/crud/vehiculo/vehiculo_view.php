@@ -16,7 +16,7 @@
             require_once('../../mysqli_connect_1.php');
 
             $sql = "SELECT id, modelo, color, duenio, placa, status FROM vehiculos";
-            $sql.=" WHERE placa= ".$_GET['placa']." LIMIT 1";
+            $sql.=" WHERE id= ".$_GET['placa']." LIMIT 1";
 
             //echo $sql;
             if($response= $dbc->query($sql)){
@@ -37,17 +37,17 @@
 
         <div class="container">
             <br><br>
-            <b>Id del Vehiculo: </b><?php   echo $response['id'];?>
+            <b>Id del Vehiculo: </b><?php   echo $register['id'];?>
             <br><br>
-            <b>Modelo del Vehiculo: </b><?php   echo $register['modelo'];?>
+            <b>Modelo del Vehiculo: </b><?php   echo $register['automatico'];?>
             <br><br>
-            <b>Color del Vehiculo: </b><?php   echo $response['color'];?>
+            <b>Color del Vehiculo: </b><?php   echo $register['color'];?>
             <br><br>
-            <b>Dueño del Vehiculo: </b><?php   echo $response['duenio'];?>
+            <b>Dueño del Vehiculo: </b><?php   echo $register['duenio'];?>
             <br><br>
-            <b>Placa del Vehiculo: </b><?php   echo $response['placa'];?>
+            <b>Placa del Vehiculo: </b><?php   echo $register['placa'];?>
             <br><br>
-            <b>Status del Vehiculo: </b><?php   echo $response['status'];?>
+            <b>Status del Vehiculo: </b><?php   echo $register['tipo'];?>
             <br><br>
 
         </div>

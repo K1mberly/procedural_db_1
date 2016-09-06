@@ -1,0 +1,3 @@
+
+ln -s crea una acceso directo, un hipervinculo.
+sudo ln -s /etc/nginx/sites-available/databases /etc/nginx/sites-enabled/databases

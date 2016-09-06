@@ -32,10 +32,10 @@ session_start();
     <a href="vehiculo_list.php" class="btn btn-danger" role="button">Return</a>
     <hr>
     <?php
-      if ($_SESSION["aviso"] != "") {
-        echo "<div id='verde1'>".$_SESSION["aviso"]."</div><hr>";
-        $_SESSION["aviso"]="";
-      }
+      // if ($_SESSION["aviso"] != "") {
+      //   echo "<div id='verde1'>".$_SESSION["aviso"]."</div><hr>";
+      //   $_SESSION["aviso"]="";
+      // }
     ?>
 
       <form class="form-horizontal" action="vehiculo_add_process.php" role="form" method="post">
@@ -88,9 +88,9 @@ session_start();
         <div class="form-group">
           <label class="control-label col-sm-2" for="">Status:</label>
           <div class="col-sm-10">
-            <input type="radio" name="tipo" value="option0" checked>Sin Seguro<br>
-            <input type="radio" name="tipo" value="option1">Seguro Particular<br>
-            <input type="radio" name="tipo" value="option2">SOAT<br>
+            <input type="radio" name="tipo" value="1" checked>Sin Seguro<br>
+            <input type="radio" name="tipo" value="2">Seguro Particular<br>
+            <input type="radio" name="tipo" value="3">SOAT<br>
 
           </div>
         </div>
